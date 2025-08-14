@@ -2,8 +2,12 @@ import axios from 'axios';
 import { getAccessToken, getRefreshToken, saveTokens } from './auth.service';
 import jwtDecode from 'jwt-decode';
 
+const api = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+});
+
 // Thiết lập interceptor cho axios
-axios.interceptors.request.use(
+api.interceptors.request.use(
   (config) => {
     const token = getAccessToken();
     if (token) {
@@ -17,7 +21,7 @@ axios.interceptors.request.use(
 );
 
 // Xử lý refresh token khi token hết hạn
-axios.interceptors.response.use(
+api.interceptors.response.use(
   (res) => {
     return res;
   },

@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { TokenPair } from '../models/Auth';
+import API_BASE_URL from '../config/api-config';
 
-const API_URL = '/auth';
+const API_URL = `${API_BASE_URL}/auth`;
 
 // Hàm trợ giúp để lưu token vào localStorage
 export const saveTokens = (tokenPair: TokenPair): void => {

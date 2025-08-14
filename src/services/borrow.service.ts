@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { getAccessToken } from './auth.service';
+import API_BASE_URL from '../config/api-config';
 
 // Bạn có thể mở rộng service này khi có API cho mượn sách
-const API_URL = '/borrows';
+const API_URL = `${API_BASE_URL}/borrows`;
 
 class BorrowService {
   getAllBorrows() {

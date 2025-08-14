@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { Fine, UserFine } from '../models/Fine';
 import { getAccessToken } from './auth.service';
+import API_BASE_URL from '../config/api-config';
 
-const API_URL = '/fines';
+const API_URL = `${API_BASE_URL}/fines`;
 
 class FineService {
     // API cho người dùng xem tiền phạt của mình

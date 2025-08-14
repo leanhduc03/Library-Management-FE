@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { getAccessToken } from './auth.service';
+import API_BASE_URL from '../config/api-config';
 
-const API_USERS_URL = '/admin/users';
+const API_USERS_URL = `${API_BASE_URL}/admin/users`;
 
 class AdminService {
   getAllUsers() {
